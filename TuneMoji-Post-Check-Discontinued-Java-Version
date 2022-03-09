@@ -1,0 +1,495 @@
+class algorthm
+// Algorithm Calculate Points Of TuneMoji Video
+
+
+{
+	 public static void main(String args[])
+	 
+	 {
+
+	double points; // total points
+	double plays; // 0.1 points
+	double comments; // 2.0 points
+	double sends; // 3.0 points
+	double quality; // Video Quality rate 0 to 10 
+	double likes; // 1.0 points
+	String url; // link of TuneMoji
+	String username; // name of creator
+	double playsq; // Plays Quality if 10K Views 0.10 Points max 2 Points Max
+	double commentsq; // Comments Quality if 2 Comments 0.10 Points max 2.5 Points
+	double sendsq; // Sends Quality if 1 Send 0.10 Points max 2.5 Points
+	double likesq; // Sends Quality if 10 Likes (10 per >) 0.10 Points max 3 Points
+	
+	// Null Values
+	points = 0;
+	plays = 0;
+	comments = 0;
+	sends = 0;
+	likes = 0;
+	url = "Null";
+	username = "Null";
+	quality = 0;
+	playsq = 0;
+	commentsq = 0;
+	sendsq = 0;
+	likesq = 0;
+	
+	// End Of Null Values
+		 
+	
+	// user input
+	System.out.println("Link of TuneMoji: ");
+	url = EasyIn.getString();
+	
+	System.out.println("Username: ");
+	username = EasyIn.getString();
+	
+	System.out.println("Plays: ");
+	plays = EasyIn.getDouble();
+	
+	System.out.println("Likes: ");
+	likes = EasyIn.getDouble();
+	
+	System.out.println("Comments: ");
+	comments = EasyIn.getDouble();
+	
+	System.out.println("Sends: ");
+	sends = EasyIn.getDouble();
+	// end of user input
+	
+	//Video Quality//
+	
+	//Plays
+	if (plays >= 200000) 
+	{
+		playsq = 2.0;
+	}
+	else if (plays >= 190000)
+	{
+		playsq = 1.9;
+	}
+	else if (plays >= 180000)
+	{
+		playsq = 1.8;
+	}
+	else if (plays >= 170000)
+	{
+		playsq = 1.7;
+	}
+	else if (plays >= 160000)
+	{
+		playsq = 1.6;
+	}
+	else if (plays >= 150000)
+	{
+		playsq = 1.5;
+	}
+	else if (plays >= 140000)
+	{
+		playsq = 1.4;
+	}
+	else if (plays >= 130000)
+	{
+		playsq = 1.3;
+	}
+	else if (plays >= 120000)
+	{
+		playsq = 1.2;
+	}
+	else if (plays >= 110000)
+	{
+		playsq = 1.1;
+	}
+	else if (plays >= 100000)
+	{
+		playsq = 1.0;
+	}
+	else if (plays >= 90000)
+	{
+		playsq = 0.9;
+	}
+	else if (plays >= 80000)
+	{
+		playsq = 0.8;
+	}
+	else if (plays >= 70000)
+	{
+		playsq = 0.7;
+	}
+	else if (plays >= 60000)
+	{
+		playsq = 0.6;
+	}
+	else if (plays >= 50000)
+	{
+		playsq = 0.5;
+	}
+	else if (plays >= 40000)
+	{
+		playsq = 0.4;
+	}
+	else if (plays >= 30000)
+	{
+		playsq = 0.3;
+	}
+	else if (plays >= 20000)
+	{
+		playsq = 0.2;
+	}
+	else if (plays >= 10000)
+	{
+		playsq = 0.1;
+	}
+	
+	//comments
+	if (comments >= 26) 
+	{
+		commentsq = 2.5;
+	}
+	else if (comments >= 25)
+	{
+		commentsq = 2.4;
+	}
+	else if (comments >= 24)
+	{
+		commentsq = 2.3;
+	}
+	else if (comments >= 23)
+	{
+		commentsq = 2.2;
+	}
+	else if (comments >= 22)
+	{
+		commentsq = 2.1;
+	}
+	else if (comments >= 21)
+	{
+		commentsq = 2.0;
+	}
+	else if (comments >= 20)
+	{
+		commentsq = 1.9;
+	}
+	else if (comments >= 19)
+	{
+		commentsq = 1.8;
+	}
+	else if (comments >= 18)
+	{
+		commentsq = 1.7;
+	}
+	else if (comments >= 17)
+	{
+		commentsq = 1.6;
+	}
+	else if (comments >= 16)
+	{
+		commentsq = 1.5;
+	}
+	else if (comments >= 15)
+	{
+		commentsq = 1.4;
+	}
+	else if (comments >= 14)
+	{
+		commentsq = 1.3;
+	}
+	else if (comments >= 13)
+	{
+		commentsq = 1.2;
+	}
+	else if (comments >= 12)
+	{
+		commentsq = 1.1;
+	}
+	else if (comments >= 11)
+	{
+		commentsq = 1.0;
+	}
+	else if (comments >= 10)
+	{
+		commentsq = 0.9;
+	}
+	else if (comments >= 9)
+	{
+		commentsq = 0.8;
+	}
+	else if (comments >= 8)
+	{
+		commentsq = 0.7;
+	}
+	else if (comments >= 7)
+	{
+		commentsq = 0.6;
+	}
+	else if (comments >= 6)
+	{
+		commentsq = 0.5;
+	}
+	else if (comments >= 5)
+	{
+		commentsq = 0.4;
+	}
+	else if (comments >= 4)
+	{
+		commentsq = 0.3;
+	}
+	else if (comments >= 3)
+	{
+		commentsq = 0.2;
+	}
+	else if (comments >= 2)
+	{
+		commentsq = 0.1;
+	}
+	
+	
+	//sends
+	if (sends >= 25) 
+	{
+		sendsq = 2.5;
+	}
+	else if (sends >= 24)
+	{
+		sendsq = 2.4;
+	}
+	else if (sends >= 23)
+	{
+		sendsq = 2.3;
+	}
+	else if (sends >= 22)
+	{
+		sendsq = 2.2;
+	}
+	else if (sends >= 21)
+	{
+		sendsq = 2.1;
+	}
+	else if (sends >= 20)
+	{
+		sendsq = 2.0;
+	}
+	else if (sends >= 19)
+	{
+		sendsq = 1.9;
+	}
+	else if (sends >= 18)
+	{
+		sendsq = 1.8;
+	}
+	else if (sends >= 17)
+	{
+		sendsq = 1.7;
+	}
+	else if (sends >= 16)
+	{
+		sendsq = 1.6;
+	}
+	else if (sends >= 15)
+	{
+		sendsq = 1.5;
+	}
+	else if (sends >= 14)
+	{
+		sendsq = 1.4;
+	}
+	else if (sends >= 13)
+	{
+		sendsq = 1.3;
+	}
+	else if (sends >= 12)
+	{
+		sendsq = 1.2;
+	}
+	else if (sends >= 11)
+	{
+		sendsq = 1.1;
+	}
+	else if (sends >= 10)
+	{
+		sendsq = 1.0;
+	}
+	else if (sends >= 9)
+	{
+		sendsq = 0.9;
+	}
+	else if (sends >= 8)
+	{
+		sendsq = 0.8;
+	}
+	else if (sends >= 7)
+	{
+		sendsq = 0.7;
+	}
+	else if (sends >= 6)
+	{
+		sendsq = 0.6;
+	}
+	else if (sends >= 5)
+	{
+		sendsq = 0.5;
+	}
+	else if (sends >= 4)
+	{
+		sendsq = 0.4;
+	}
+	else if (sends >= 3)
+	{
+		sendsq = 0.3;
+	}
+	else if (sends >= 2)
+	{
+		sendsq = 0.2;
+	}
+	else if (sends >= 1)
+	{
+		sendsq = 0.1;
+	}
+	
+	
+	//likes
+	if (likes >= 300) 
+	{
+		likesq = 3.0;
+	}
+	else if (likes >= 290)
+	{
+		likesq = 2.9;
+	}
+	else if (likes >= 280)
+	{
+		likesq = 2.8;
+	}
+	else if (likes >= 270)
+	{
+		likesq = 2.7;
+	}
+	else if (likes >= 260)
+	{
+		likesq = 2.6;
+	}
+	else if (likes >= 250)
+	{
+		likesq = 2.5;
+	}
+	else if (likes >= 240)
+	{
+		likesq = 2.4;
+	}
+	else if (likes >= 230)
+	{
+		likesq = 2.3;
+	}
+	else if (likes >= 220)
+	{
+		likesq = 2.2;
+	}
+	else if (likes >= 210)
+	{
+		likesq = 2.1;
+	}
+	else if (likes >= 200)
+	{
+		likesq = 2.0;
+	}
+	else if (likes >= 190)
+	{
+		likesq = 1.9;
+	}
+	else if (likes >= 180)
+	{
+		likesq = 1.8;
+	}
+	else if (likes >= 170)
+	{
+		likesq = 1.7;
+	}
+	else if (likes >= 160)
+	{
+		likesq = 1.6;
+	}
+	else if (likes >= 150)
+	{
+		likesq = 1.5;
+	}
+	else if (likes >= 140)
+	{
+		likesq = 1.4;
+	}
+	else if (likes >= 130)
+	{
+		likesq = 1.3;
+	}
+	else if (likes >= 120)
+	{
+		likesq = 1.2;
+	}
+	else if (likes >= 110)
+	{
+		likesq = 1.1;
+	}
+	else if (likes >= 100)
+	{
+		likesq = 1.0;
+	}
+	else if (likes >= 90)
+	{
+		likesq = 0.9;
+	}
+	else if (likes >= 80)
+	{
+		likesq = 0.8;
+	}
+	else if (likes >= 70)
+	{
+		likesq = 0.7;
+	}
+	else if (likes >= 60)
+	{
+		likesq = 0.6;
+	}
+	else if (likes >= 50)
+	{
+		likesq = 0.5;
+	}
+	else if (likes >= 40)
+	{
+		likesq = 0.4;
+	}
+	else if (likes >= 30)
+	{
+		likesq = 0.3;
+	}
+	else if (likes >= 20)
+	{
+		likesq = 0.2;
+	}
+	else if (likes >= 10)
+	{
+		likesq = 0.1;
+	}
+	//End of Video Quality//
+	
+	// calculation of points
+	plays = plays * 0.1;
+	likes = likes * 1.0;
+	comments = comments * 2.0;
+	sends = sends * 3.0;
+	quality = playsq + likesq + commentsq + sendsq;
+	points = plays + comments + sends + quality;
+	// End of calculation
+	
+	// Results
+	System.out.println(" ");
+	System.out.println("Username: " + username);
+	System.out.println(" ");
+	System.out.println("Video: " + url);
+	System.out.println(" ");
+	System.out.println("Total Points: " + points);	
+	System.out.println(" ");
+	System.out.println("Video Quality: " + quality);
+	//End Of Results
+	
+	
+	 }
+}
