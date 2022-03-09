@@ -1,0 +1,361 @@
+#!/usr/bin/bash
+#Made By GoalTV For TuneMoji Video Quality Check.
+#Contact j.czeropski10@gmail.com  January @2020
+
+# Input for user of TuneMoji Url
+
+read -p "Please Enter TuneMoji Link :" link
+id=$( echo $link  | rev | cut -d '/' -f 2 | rev )
+
+#TuneMoji Api with jq
+username=$(curl -s -X GET "https://apis.tune-moji.com/v1/clips/$id" -H  "accept: application/json" | jq -r '.author | .username')
+plays=$(curl -s -X GET "https://apis.tune-moji.com/v1/clips/$id" -H  "accept: application/json" | jq -r '.stats | .plays')
+comments=$(curl -s -X GET "https://apis.tune-moji.com/v1/clips/$id" -H  "accept: application/json" | jq -r '.stats | .comments')
+sends=$(curl -s -X GET "https://apis.tune-moji.com/v1/clips/$id" -H  "accept: application/json" | jq -r '.stats | .sends')
+likes=$(curl -s -X GET "https://apis.tune-moji.com/v1/clips/$id" -H  "accept: application/json" | jq -r '.stats | .likes')
+
+# variables Null
+points=0
+quality=0
+playsq=0
+commentsq=0
+sendsq=0
+likesq=0
+
+#Quality Check up to 100 Points by if statments
+
+#  Plays
+if [[ $plays -ge 200000 ]]; 
+	then
+		playsq=20
+
+elif [[ $plays -ge 190000 ]];
+	then
+		playsq=19
+elif [[ $plays -ge 180000 ]];
+	then
+		playsq=18
+elif [[ $plays -ge 170000 ]];
+	then
+		playsq=17
+elif [[ $plays -ge 160000 ]];
+	then
+		playsq=16
+elif [[ $plays -ge 150000 ]];
+	then
+		playsq=15
+elif [[ $plays -ge 140000 ]];
+	then
+		playsq=14
+elif [[ $plays -ge 130000 ]];
+	then
+		playsq=13
+elif [[ $plays -ge 120000 ]];
+	then
+		playsq=12
+elif [[ $plays -ge 110000 ]];
+	then
+		playsq=11
+elif [[ $plays -ge 100000 ]];
+	then
+		playsq=10
+elif [[ $plays -ge 90000 ]];
+	then
+		playsq=9
+elif [[ $plays -ge 80000 ]];
+	then
+		playsq=8
+elif [[ $plays -ge 70000 ]];
+	then
+		playsq=7
+elif [[ $plays -ge 60000 ]];
+	then
+		playsq=6
+elif [[ $plays -ge 50000 ]];
+	then
+		playsq=5
+elif [[ $plays -ge 40000 ]];
+	then
+		playsq=4
+elif [[ $plays -ge 30000 ]];
+	then
+		playsq=3
+elif [[ $plays -ge 20000 ]];
+	then
+		playsq=2
+elif [[ $plays -ge 10000 ]];
+	then
+		playsq=1
+	fi
+
+# 	comments
+if [[ $comments -ge 26 ]]; 
+	then
+		commentsq=25
+elif [[ $comments -ge 25 ]];
+	then
+		commentsq=24
+elif [[ $comments -ge 24 ]];
+	then
+		commentsq=23
+elif [[ $comments -ge 23 ]];
+	then
+		commentsq=22
+elif [[ $comments -ge 22 ]];
+	then
+		commentsq=21
+elif [[ $comments -ge 21 ]];
+	then
+		commentsq=20
+elif [[ $comments -ge 20 ]];
+	then
+		commentsq=19
+elif [[ $comments -ge 19 ]];
+	then
+		commentsq=18
+elif [[ $comments -ge 18 ]];
+	then
+		commentsq=17
+elif [[ $comments -ge 17 ]];
+	then
+		commentsq=16
+elif [[ $comments -ge 16 ]];
+	then
+		commentsq=15
+elif [[ $comments -ge 15 ]];
+	then
+		commentsq=14
+elif [[ $comments -ge 14 ]];
+	then
+		commentsq=13
+elif [[ $comments -ge 13 ]];
+	then
+		commentsq=12
+elif [[ $comments -ge 12 ]];
+	then
+		commentsq=11
+elif [[ $comments -ge 11 ]];
+	then
+		commentsq=10
+elif [[ $comments -ge 10 ]];
+	then
+		commentsq=9
+elif [[ $comments -ge 9 ]];
+	then
+		commentsq=8
+elif [[ $comments -ge 8 ]];
+	then
+		commentsq=7
+elif [[ $comments -ge 7 ]];
+	then
+		commentsq=6
+elif [[ $comments -ge 6 ]];
+	then
+		commentsq=5
+elif [[ $comments -ge 5 ]];
+	then
+		commentsq=4
+elif [[ $comments -ge 4 ]];
+	then
+		commentsq=3
+elif [[ $comments -ge 3 ]];
+	then
+		commentsq=2
+elif [[ $comments -ge 2 ]];
+	then
+		commentsq=1
+	fi
+	# sends
+if [[ $sends -ge 25 ]]; 
+	then
+		sendsq=25
+elif [[ $sends -ge 24 ]];
+	then
+		sendsq=24
+elif [[ $sends -ge 23 ]];
+	then
+		sendsq=23 
+elif [[ $sends -ge 22 ]];
+	then
+		sendsq=22
+elif [[ $sends -ge 21 ]];
+	then
+		sendsq=21
+elif [[ $sends -ge 20 ]];
+	then
+		sendsq=20
+elif [[ $sends -ge 19 ]];
+	then
+		sendsq=19
+elif [[ $sends -ge 18 ]];
+	then
+		sendsq=18
+elif [[ $sends -ge 17 ]];
+	then
+		sendsq=17
+elif [[ $sends -ge 16 ]];
+	then
+		sendsq=16
+elif [[ $sends -ge 15 ]];
+	then
+		sendsq=15
+elif [[ $sends -ge 14 ]];
+	then
+		sendsq=14
+elif [[ $sends -ge 13 ]];
+	then
+		sendsq=13
+elif [[ $sends -ge 12 ]];
+	then
+		sendsq=12
+elif [[ $sends -ge 11 ]];
+	then
+		sendsq=11
+elif [[ $sends -ge 10 ]];
+	then
+		sendsq=10
+elif [[ $sends -ge 9 ]];
+	then
+		sendsq=9
+elif [[ $sends -ge 8 ]];
+	then
+		sendsq=8
+elif [[ $sends -ge 7 ]];
+	then
+		sendsq=7
+elif [[ $sends -ge 6 ]];
+	then
+		sendsq=6
+elif [[ $sends -ge 5 ]];
+	then
+		sendsq=5
+elif [[ $sends -ge 4 ]];
+	then
+		sendsq=4
+elif [[ $sends -ge 3 ]];
+	then
+		sendsq=3
+elif [[ $sends -ge 2 ]];
+	then
+		sendsq=2
+elif [[ $sends -ge 1 ]];
+	then
+		sendsq=1
+	fi
+# likes
+if [[ $likes -ge 300 ]];
+	then
+		likesq=30
+elif [[ $likes -ge 290 ]];
+	then
+		likesq=29
+elif [[ $likes -ge 280 ]];
+	then
+		likesq=28
+elif [[ $likes -ge 270 ]];
+	then
+		likesq=27
+elif [[ $likes -ge 260 ]];
+	then
+		likesq=26
+elif [[ $likes -ge 250 ]];
+	then
+		likesq=25
+elif [[ $likes -ge 240 ]];
+	then
+		likesq=24
+elif [[ $likes -ge 230 ]];
+	then
+		likesq=23
+elif [[ $likes -ge 220 ]];
+	then
+		likesq=22
+elif [[ $likes -ge 210 ]];
+	then
+		likesq=21
+elif [[ $likes -ge 200 ]];
+	then
+		likesq=20
+elif [[ $likes -ge 190 ]];
+	then
+		likesq=19
+elif [[ $likes -ge 180 ]];
+	then
+		likesq=18
+elif [[ $likes -ge 170 ]];
+	then
+		likesq=17
+elif [[ $likes -ge 160 ]];
+	then
+		likesq=16
+elif [[ $likes -ge 150 ]];
+	then
+		likesq=15
+elif [[ $likes -ge 140 ]];
+	then
+		likesq=14
+elif [[ $likes -ge 130 ]];
+	then
+		likesq=13
+elif [[ $likes -ge 120 ]];
+	then
+		likesq=12
+elif [[ $likes -ge 110 ]];
+	then
+		likesq=11
+elif [[ $likes -ge 100 ]];
+	then
+		likesq=10
+elif [[ $likes -ge 90 ]];
+	then
+		likesq=9
+elif [[ $likes -ge 80 ]];
+	then
+		likesq=8
+elif [[ $likes -ge 70 ]];
+	then
+		likesq=7
+elif [[ $likes -ge 60 ]];
+	then
+		likesq=6
+elif [[ $likes -ge 50 ]];
+	then
+		likesq=5
+elif [[ $likes -ge 40 ]];
+	then
+		likesq=4
+elif [[ $likes -ge 30 ]];
+	then
+		likesq=3
+elif [[ $likes -ge 20 ]];
+	then
+		likesq=2
+elif [[ $likes -ge 10 ]];
+	then
+		likesq=1
+fi
+
+
+# Calulation
+playscal=$(( $plays * 1/100 )) # 0.1 Points per view
+likescal=$(( $likes * 10/100 )) # 10 Points per view
+commentscal=$(( $comments * 20/100 )) # 20 Points per view
+sendscal=$(( $sends * 30/100 )) # 30 points per view
+quality=$(( $playsq + $likesq + $commentsq + $sendsq )) # calulation of if statments quality
+points=$(( $playscal + $commentscal + $sendscal + $likescal )) # calulation of plays,likes,comments,sends in total
+
+# User Output 
+echo ""
+echo -e "\e[31m-----Info-----\e[0m"
+echo ""
+echo -e "\e[34mUsername :\e[0m" $username
+echo -e "\e[34mVideo :\e[0m" $link
+echo -e "\e[34mTotal Points :\e[0m" $points
+echo -e "\e[34mVideo Quality :\e[0m" $quality"/100"
+echo ""
+echo -e "\e[31m-----Stats-----\e[0m"
+echo ""
+echo -e "\e[32mTotal Views :\e[0m"  $plays
+echo -e "\e[32mTotal Comments :\e[0m" $comments
+echo -e "\e[32mTotal Likes :\e[0m" $likes
+echo -e "\e[32mTotal Sends :\e[0m" $sends
